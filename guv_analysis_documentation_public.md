@@ -80,7 +80,7 @@ Run the **channel sanity check** cell (Section 2) once per new dataset to visual
 
 | Variable | Default | Description |
 |---|---|---|
-| `MEMBRANE_THICKNESS_PX` | `7` | Thickness of the membrane ring eroded inward from each GUV boundary. Verify visually in Section 4b before running the batch |
+| `MEMBRANE_THICKNESS_PX` | `7` | Thickness of the membrane ring eroded inward from each GUV boundary. Verify visually using the ring-annotation figure produced by the Section 4c batch loop |
 
 ---
 
@@ -397,8 +397,8 @@ Returns `(df, membrane_masks, lumen_masks)`.
 | GUVs split into fragments | `CP_DIAMETER` too small (cyto3) | Increase `CP_DIAMETER` or use cpsam |
 | Multiple GUVs merged into one | `CP_DIAMETER` too large (cyto3) | Decrease `CP_DIAMETER` |
 | Small debris detected | `MINIMUM_PHYSICAL_DIAMETER_UM` too small | Increase to exclude debris size |
-| Ring too thin / misses membrane | `MEMBRANE_THICKNESS_PX` too small | Increase by 2–3 px and re-check Section 4b |
-| Ring bleeds into lumen | `MEMBRANE_THICKNESS_PX` too large | Decrease and re-check Section 4b |
+| Ring too thin / misses membrane | `MEMBRANE_THICKNESS_PX` too small | Increase by 2–3 px and re-run Section 4c to verify the ring-annotation figure |
+| Ring bleeds into lumen | `MEMBRANE_THICKNESS_PX` too large | Decrease and re-run Section 4c to verify the ring-annotation figure |
 | `GFP_mem_lumen_ratio` is NaN | GUV too small — lumen empty after erosion | Lower `MEMBRANE_THICKNESS_PX` or raise `MINIMUM_PHYSICAL_DIAMETER_UM` |
 | Channels appear swapped | `GFP_CHANNEL_IDX` / `MCHERRY_CHANNEL_IDX` wrong | Swap the two values in Section 0b |
 | napari window does not appear | Wrong kernel or missing Qt | Ensure `guv_env` kernel is selected; run `pip install pyqt5` |
