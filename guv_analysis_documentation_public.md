@@ -7,7 +7,7 @@
 
 ## Overview
 
-This pipeline segments and quantifies fluorescence from two-channel (GFP + mCherry) confocal images of Giant Unilamellar Vesicles (GUVs) stored as CellSens `.vsi` files. It uses [Cellpose](https://www.cellpose.org/) to segment GUV boundaries on the GFP channel, allows manual mask correction in [napari](https://napari.org/), then measures fluorescence intensity separately in the **membrane ring** and **lumen** of each GUV.
+This pipeline segments and quantifies fluorescence from two-channel (GFP + mCherry) fluorescence images of Giant Unilamellar Vesicles (GUVs) stored as CellSens `.vsi` files. It uses [Cellpose](https://www.cellpose.org/) to segment GUV boundaries on the GFP channel, allows manual mask correction in [napari](https://napari.org/), then measures fluorescence intensity separately in the **membrane ring** and **lumen** of each GUV.
 
 ### Two workflows
 
