@@ -379,7 +379,7 @@ Inside a Jupyter kernel, the Qt event loop is not running autonomously. Without 
 
 **Step 1 — Extract background pixels:**
 
-$$\mathcal{B} = \bigl\{\, I(x,y) : M(x,y) = 0 \,\bigr\}$$
+$$\mathcal{B} = \bigl\lbrace\, I(x,y) : M(x,y) = 0 \,\bigr\rbrace$$
 
 where $M$ is the label mask (0 outside all GUVs). These are all pixels belonging to the external aqueous phase (plus any field-of-view area not covered by a GUV mask).
 
