@@ -189,7 +189,7 @@ When `USE_FINETUNED_MODEL = True`, Section 5-iii redefines `segment_guvs()` in-p
 | Name | Type | Default | Description |
 |---|---|---|---|
 | `masks` | ndarray (Y, X) int32 | — | Cellpose label mask |
-| `membrane_thickness_px` | int | 5 | Number of erosion iterations |
+| `membrane_thickness_px` | int | 5 (bare default); **7 in practice** via `MEMBRANE_THICKNESS_PX` config constant | Number of erosion iterations |
 
 **Returns:** Two dicts `{label (int) → bool ndarray (Y, X)}`: `membrane_masks` and `lumen_masks`.
 
@@ -316,7 +316,7 @@ The $\varepsilon$ term only prevents numerical infinity in the edge case where t
 | `gfp_img` | ndarray (Y, X) uint16 | GFP channel |
 | `mcherry_img` | ndarray (Y, X) uint16 | mCherry channel |
 | `masks` | ndarray (Y, X) int32 | Cellpose/corrected label mask |
-| `membrane_thickness_px` | int | Passed to `make_membrane_lumen_masks()` |
+| `membrane_thickness_px` | int | Passed to `make_membrane_lumen_masks()`; always supplied as `MEMBRANE_THICKNESS_PX` (= 7) at every call site |
 
 **Returns:** `(df, membrane_masks, lumen_masks)` where `df` is the merged DataFrame.
 
